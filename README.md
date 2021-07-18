@@ -76,7 +76,7 @@ module.exports = container.get('my-own');
 
 ```js
 // your-module.js
-const logger = require('my-logger.js')
+const logger = require('./my-logger.js');
 
 logger.error("This is my own logger error!");
 ```
@@ -104,7 +104,7 @@ module.exports = {
 
 ```js
 // your-module.js
-const { logger, morgan } = require('my-logger.js')
+const { logger, morgan } = require('./my-logger.js');
 
 logger.error("Show me the money!");
 morgan.info("HTTP access");
