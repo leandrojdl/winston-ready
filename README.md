@@ -61,12 +61,11 @@ Otherwise only at files. It is recommended that you **turn off** `LOG_CONSOLE` o
 
 ```js
 // my-logger.js
+process.env.LOG_AVOID_DEFAULT = 'true';
 const { container, winston } = require('winston-ready/container');
 
-container.close('default');
-
 container.add('my-own', {
-  level: 'warning',
+  level: 'warn',
   format: winston.format.json(),
   transports: [new winston.transports.File({ filename: 'my-own.log' })],
 });
