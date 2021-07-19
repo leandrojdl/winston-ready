@@ -49,6 +49,7 @@ This package is configured using (optional) environment variables:
 * `LOG_DATE_PATTERN` (default _YYYY-MM-DD_)
 * `LOG_CONSOLE` (default _on_)
 * `LOG_CONSOLE_LEVEL` (default _debug_)
+* `LOG_AVOID_DEFAULT` (default _false_)
 
 With `LOG_STYLE` you can define if log using daily _rotate_ files, just a _single_ file or _both_.
 
@@ -75,7 +76,7 @@ module.exports = container.get('my-own');
 
 ```js
 // your-module.js
-const logger = require('./my-logger.js');
+const logger = require('./my-logger');
 
 logger.error("This is my own logger error!");
 ```
@@ -103,11 +104,15 @@ module.exports = {
 
 ```js
 // your-module.js
-const { logger, morgan } = require('./my-logger.js');
+const { logger, morgan } = require('./my-logger');
 
 logger.error("Show me the money!");
 morgan.info("HTTP access");
 ```
+
+## LICENSE
+
+[ISC](LICENSE.md)
 
 [winston]: https://github.com/winstonjs/winston
 [levels]: https://github.com/winstonjs/winston#logging-levels
